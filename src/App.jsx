@@ -37,25 +37,39 @@ export default function Profile() {
         {selectedStudent && (
           <div className="student-details">
             <div className="left-segment">
-              <img
-                src="https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png"
-                alt="Avatar"
-                className="list-item-image"
-              />
-              <h2>{selectedStudent.name}</h2>
-              <p>ID: {selectedStudent.id}</p>
-              <p>Gender: {selectedStudent.gender}</p>
-              <p>Age: {selectedStudent.age}</p>
-              <p>Grade: {selectedStudent.grade}</p>
+              <div className="avatar-wrapper">
+                <img
+                  src="https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png"
+                  alt="Avatar"
+                  className="avatar-image"
+                />
+              </div>
+              <div className="student-info">
+                <h2>{selectedStudent.name}</h2>
+                <p>Student ID: {selectedStudent.id}</p>
+                <p>Gender: {selectedStudent.gender}</p>
+                <p>Age: {selectedStudent.age}</p>
+                <p>Grade: {selectedStudent.grade}</p>
+              </div>
             </div>
-            <div className="right-segment">
-            <p>Mother&apos;s Name: {selectedStudent.motherName}</p>
-<p>Mother&apos;s Email: {selectedStudent.motherEmail}</p>
-<p>Mother&apos;s Phone Number: {selectedStudent.motherPhoneNumber}</p>
-<p>Father&apos;s Name: {selectedStudent.fatherName}</p>
-<p>Father&apos;s Email: {selectedStudent.fatherEmail}</p>
-<p>Father&apos;s Phone Number: {selectedStudent.fatherPhoneNumber}</p>
 
+            <div className="right-segment">
+              <div className="mother-details">
+                <h3 className="segment-title">Mother</h3>
+                <div className="segment-details">
+                  <p>{selectedStudent.motherName}</p>
+                  <p>Email: {selectedStudent.motherEmail}</p>
+                  <p>Phone Number: {selectedStudent.motherPhoneNumber}</p>
+                </div>
+              </div>
+              <div className="father-details">
+                <h3 className="segment-title">Father</h3>
+                <div className="segment-details">
+                  <p>{selectedStudent.fatherName}</p>
+                  <p>Email: {selectedStudent.fatherEmail}</p>
+                  <p>Phone Number: {selectedStudent.fatherPhoneNumber}</p>
+                </div>
+              </div>
             </div>
           </div>
         )}
