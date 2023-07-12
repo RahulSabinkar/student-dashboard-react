@@ -1,26 +1,50 @@
-body {
-  color: #555;
-  background-color: #5b9eed;
-  font-family: sans-serif;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #EEEEF1;
 }
 
 .container {
+  padding: 16px;
   display: flex;
-  max-width: 1200px;
-  margin: 50px auto;
+  flex-direction: row;
 }
 
-.list-wrapper {
-  background: #fff;
-  border-radius: 2px;
-  list-style: none;
-  padding: 10px 20px;
-  flex: 0 0 300px;
+/* Side Panel */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 16px;
+  background-color: #EEEEF1;
+}
+
+.side-upper-panel {
+  padding: 16px;
+  border: 2px solid rgba(124, 124, 124, 0.289);
+  border-radius: 12px;
+}
+
+.side-lower-panel {
+  border-radius: 12px;
+  background-color: #EEEEF1;
+  box-shadow: 5px 5px 4px 2px  rgba(0, 0, 0, 0.05), -5px -5px 10px 2px rgba(255, 255, 255, 0.647);
+}
+
+.side-lower-panel-heading {
+  padding: 16px;
+}
+
+.side-lower-panel-list-wrapper {
+  background: #EEEEF1;
+  
 }
 
 .list {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .list :hover {
@@ -29,101 +53,149 @@ body {
 
 .list-item {
   display: flex;
-  margin: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  flex-direction: row;
+  padding: 6px 16px;
+  column-gap: 12px;
+  align-items: center;
 }
 
-.list-item:last-child {
+.list-item.active {
+  background: #F1EFBE;
+}
+
+/* .list-item:last-child {
   border-bottom: none;
+} */
+
+.list-item-image-container {
+  display: flex;
+  align-content: center;
 }
 
 .list-item-image {
   border-radius: 50%;
-  width: 64px;
+  width: 34px;
 }
 
 .list-item-content {
-  margin-left: 20px;
+  width: 80%;
+  font-size: 12px;
+  line-height: 0.3;
 }
 
-.list-item-content h4,
-.list-item-content p {
-  margin: 0;
+.list-item-content-name {
+  text-transform: uppercase;
 }
 
-.list-item-content h4 {
-  margin-top: 10px;
-  font-size: 18px;
+/* .list-item-content-id {
+
+} */
+
+/* Main Panel */
+.main-panel {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
 }
 
-.list-item-content p {
-  margin-top: 5px;
-  color: #aaa;
-}
-
-.main-content {
-  flex: 1;
+.upper-main-panel {
   padding: 20px;
-  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 12px;
+  border-radius: 12px;
+  background-color: #EEEEF1;
+  box-shadow: 5px 5px 4px 2px  rgba(0, 0, 0, 0.05), -5px -5px 10px 2px rgba(255, 255, 255, 0.647);
+}
+
+.upper-main-panel p {
+  line-height: 1%;
 }
 
 .student-details {
+  width: 40%;
   display: flex;
+  column-gap: 12px;
 }
 
-.left-segment {
-  flex: 0 0 50%;
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.student-profile-image-container {
+  padding-top: 6px;
+  width: 30%;
 }
 
-.avatar-wrapper {
-  width: 64px;
-  height: 64px;
-  margin-right: 20px;
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.avatar-image {
-  width: 100%;
-  height: 100%;
+.student-profile-image {
+  border-radius: 12px;
   object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 70%;
 }
 
 .student-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  line-height: 0.2;
 }
 
-.right-segment {
-  flex: 0 0 50%;
+.student-info-name {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.student-info-text {
+  font-size: 12px;
+}
+
+.gender-age {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.divider {
+  background-color: rgba(124, 124, 124, 0.289);
+  width: 1.5px;
+}
+
+.parent-details {
+  width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  line-height: 0.2;
+  justify-content:space-between;
+  row-gap: 15px;
+  padding-left: 40px;
 }
 
-.mother-details,
-.father-details {
-  margin-bottom: 20px;
+.parent-info {
+  display: flex;
+  flex-direction: row;
 }
 
-.segment-title {
-  font-weight: bold;
+.parent-info-title {
+  font-size: 10px;
 }
 
-.segment-details {
+.parent-info-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.parent-info-text {
+  font-size: 12px;
+}
+
+.parent-info-address {
+  font-size: 10px;
+}
+
+.mother-info, .father-info {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
+/* .lower-main-panel {
+
+} */
